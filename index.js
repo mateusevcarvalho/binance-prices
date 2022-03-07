@@ -13,7 +13,7 @@ app.get('/get-prices', async (req, res) => {
         const response = await axios.get('https://api.binance.com/api/v3/ticker/price?' + formDataParams);
         return res.json(response.data)
     } catch (e) {
-        res.status(e.status).send(e);
+        res.status(400).send(e);
     }
 });
 
